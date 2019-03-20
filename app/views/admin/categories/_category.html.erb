@@ -1,22 +1,14 @@
 <tr>
   <td>
-    <%= image_tag product.image.tiny %>
+    <%= category.name %>
   </td>
   <td>
-    <h4><%= product.name %></h4>
-    <br>
-    <p><%= product.description %></p>
+    <%= category.products.count %>
   </td>
   <td>
-    <%= product.category.name %>
+    <%= category.created_at %>
   </td>
   <td>
-    <%= product.price %>
-  </td>
-  <td>
-    <%= product.quantity %>
-  </td>
-  <td>
-    <%= link_to fa_icon('trash'), [:admin, product], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+    <%= category.updated_at %>
   </td>
 </tr>
