@@ -3,7 +3,8 @@ class UserNotifier < ApplicationMailer
   layout 'mailer'
 
   def send_order_receipt (user, order)
+    @order = order
     mail(:to => user.email,
-      :subject => "Thanks for your order! #{order.id}" )
+      :subject => "Order ##{@order.id} received" )
     end
 end
