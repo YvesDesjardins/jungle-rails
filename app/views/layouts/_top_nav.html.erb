@@ -26,6 +26,7 @@
           </ul>
         </li>
       </ul>
+      <%# display login/logout/register buttons depending on if use is logged in %>
       <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
             <li><a>Signed in as <%= current_user.email %></a></li><li><a>|</a></li> <li><%= link_to "Logout", '/logout' %></li>

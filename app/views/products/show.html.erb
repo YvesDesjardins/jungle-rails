@@ -26,8 +26,9 @@
       </div>
     </div>
   </article>
-
   <p/>
+
+  <%# only display field to write review if logged in %>
   <% if current_user %>
     <div class="leave-a-review">
       <h4>Leave a review</h4>
@@ -42,6 +43,7 @@
     </div>
   <% end %>
 
+  <%# list all existing reviews for this product %>
   <div class='list-reviews'>
     <h4>Reviews</h4>
     <ul>

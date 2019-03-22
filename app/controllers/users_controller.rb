@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   def new
   end
 
+  # create new user on registration and logs in automatically on sucess
   def create
     user = User.create(user_params)
     if user.save

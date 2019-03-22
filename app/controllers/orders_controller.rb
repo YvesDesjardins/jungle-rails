@@ -53,6 +53,7 @@ class OrdersController < ApplicationController
       )
     end
     if order.save!
+      # sends email to user on successful order
       UserNotifier.send_order_receipt(current_user, order).deliver
     end
     order
