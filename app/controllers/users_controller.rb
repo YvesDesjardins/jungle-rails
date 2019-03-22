@@ -2,9 +2,10 @@ class UsersController < ApplicationController
   def new
   end
 
+  # create new user on registration and logs in automatically on sucess
   def create
-    user = User.create(user_params)
-    if user.save
+    user = User.create(user_params).valid?
+    if user
       session[:user_id] = user.id
       redirect_to '/'
     else
