@@ -52,7 +52,7 @@ class OrdersController < ApplicationController
         total_price: product.price * quantity
       )
     end
-    if order.save!
+    if order.save! && current_user
       # sends email to user on successful order
       UserNotifier.send_order_receipt(current_user, order).deliver
     end
