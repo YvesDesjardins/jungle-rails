@@ -24,17 +24,26 @@
           <dd><%= @product.price %></dd>
         </dl>
       </div>
-      <h4>Reviews</h4>
-      <ul>
-        <% @reviews.each do |review| %>
-          <li class="review"><%= User.where(id: review.user_id).first.first_name %> says
-          <%= review.rating %>/10
-          "<%= review.description %>"
-        <% end %>
-      </ul>
     </div>
-
-
   </article>
+
+  <p/>
+  <h4>Leave a review</h4>
+  <%= form_for([@product, @review]) do |f| %>
+    <p>Rating: <%= f.select :rating, [1,2,3,4,5,6,7,8,9,10] %></p>
+    <p>Comments: <%= f.text_field :description %></p>
+    <%= f.hidden_field :product_id, value: @product.id %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.submit "Submit" %>
+  <% end %>
+
+  <h4>Reviews</h4>
+  <ul>
+    <% @reviews.each do |review| %>
+      <li class="review"><%= User.where(id: review.user_id).first.first_name %> says
+      <%= review.rating %>/10
+      "<%= review.description %>"
+    <% end %>
+  </ul>
 
 </section>
