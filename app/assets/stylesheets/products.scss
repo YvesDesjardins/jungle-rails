@@ -76,6 +76,25 @@ main section.categories-show {
   }
 }
 
+.leave-a-review {
+  border: black 2px solid;
+
+  h4,
+  .new_review {
+    margin: 10px;
+
+    #review_description {
+      width: 100%;
+    }
+  }
+}
+
+.list-reviews {
+  .review {
+    font-style: italic;
+  }
+}
+
 main section.products-show {
 
   .product-detail {
